@@ -24,6 +24,40 @@ This project was a great exercise in managing and parsing URL state.
 
 - Used `useLocation` hook from React Router to get the current `pathname`, split it into segments, and dynamically generate the breadcrumb links.
 
+### Potential improvements
+
+This solution delivers the core functionality but for a production-grade application, I would make the following improvements:
+
+1.  **Use Tanstack Query (React Query):** For a real e-commerce site, the product data would come from an API. I would use **Tanstack Query** to handle data fetching, which provides:
+
+    - Efficient caching to avoid re-fetching data unnecessarily.
+    - A built-in way to manage loading, error, and success states.
+    - Simpler-to-read components by removing complex `useEffect` logic.
+
+2.  **Robust `useEffect` Fetching:** If I still have to use `useEffect`, I would expand the `useEffect` hook to properly manage all states of the data-fetching lifecycle (loading, error, and data):
+
+```js
+const [data, setData] = useState(null);
+const [isLoading, setIsLoading] = useState(true);
+const [error, setError] = useState(null);
+
+useEffect(() => {
+  const fetchData = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch("---");
+      const json = await response.json();
+      setData(json);
+    } catch (e) {
+      setError(e);
+    }
+    setIsLoading(false);
+  };
+
+  fetchData();
+}, []);
+```
+
 ### How to Run Locally
 
 1.  Clone this repository.
