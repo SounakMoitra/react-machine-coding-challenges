@@ -5,7 +5,7 @@ const Breadcrumbs = () => {
 
   const pathnames = pathname.split("/").filter((x) => x);
 
-  console.log(pathnames); // eg: ['products', '8']
+  // console.log(pathnames); // eg: ['products', '8']
 
   let breadcrumbsPath = "";
 
