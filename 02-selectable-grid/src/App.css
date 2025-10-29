@@ -1,0 +1,24 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns, 10), 35px);
+  grid-template-rows: repeat(var(--rows, 10), 35px);
+  gap: 2px;
+  user-select: none;
+}
+
+.box {
+  width: 35px;
+  height: 35px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected {
+  background-color: lightblue;
+}
