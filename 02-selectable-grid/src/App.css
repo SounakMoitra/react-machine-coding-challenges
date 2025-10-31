@@ -19,6 +19,10 @@ body {
   align-items: center;
 }
 
+.box:hover {
+  background-color: gray;
+}
+
 .selected {
   background-color: lightblue;
 }

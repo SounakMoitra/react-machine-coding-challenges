@@ -25,7 +25,6 @@ const SelectableGrid = ({ rows = 10, columns = 10 }) => {
   };
 
   //   gotta use useCallback since its an expensive function
-
   const handleMouseEnter = useCallback(
     (boxNumber) => {
       if (isMouseDown) {
