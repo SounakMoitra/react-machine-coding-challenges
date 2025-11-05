@@ -7,6 +7,7 @@ const SelectableGrid = ({ rows = 10, columns = 10 }) => {
   //              5, 6, 7, 8, 9
   //            ]
 
+  // MOUSE EVENTS:
   //   onMouseDown -> this will be triggered when user clicks on the div and it'll do something
   //   onMouseEnter -> this will track in which div the user is currently in
   //   onMouseUp -> it takes care of the release logic
